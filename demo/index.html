@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+
+	<ul>
+		<li><a href="#foo/123">foo</a></li>
+		<li><a href="#bar">bar</a></li>
+		<li><a href="#baz">baz</a></li>
+	</ul>
+
+
+	<script src="../src/latte.js"></script>
+
+	<script>
+
+	latte.routes.config("mode", "hash");
+
+	latte.define("foo", {
+		name: "foo",
+		getName: function(){
+			return this.name;
+		}
+	});
+
+	latte.action({
+		rule: "^foo/(\\d+)",
+		action: {
+			name: "action",
+			_extend: ["Events"],
+			_initialize: function(){
+				this.on("load", this._onLoad);
+				this.trigger("load");
+			},
+			_onLoad: function(){
+				alert(latte.require("foo").getName());
+			}
+		}
+	});
+
+	latte.drip();
+
+	</script>
+	
+</body>
+</html>

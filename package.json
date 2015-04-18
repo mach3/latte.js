@@ -1,0 +1,21 @@
+{
+  "name": "latte.js",
+  "version": "0.0.1",
+  "description": "Simple class and router library",
+  "main": "dist/latte.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "class",
+    "router"
+  ],
+  "author": "mach3 <http://github.com/mach3>",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-uglify": "^0.9.1",
+    "load-grunt-tasks": "^3.1.0"
+  }
+}
